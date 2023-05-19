@@ -1,0 +1,11 @@
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+<ul> {% for pizza in pizzas %}
+    <li><a href="{% url 'pizzas:pizza' pizza.id %}" style="text-decoration: none;">{{pizza.name}}</a></li>
+    {% empty %}
+    <li>Nenhuma pizza disponível</li>
+
+</ul> {% endfor %}
+
+{% endblock content %}
